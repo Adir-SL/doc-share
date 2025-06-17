@@ -1,5 +1,5 @@
 function saveFunc() {
-    window.location.hash = document.getElementById("docInput").innerText;
+    window.location.hash = document.getElementById("docInput").innerText.replace(/\n/g, '%0A');
 }
 
 function loadFunc() {

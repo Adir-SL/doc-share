@@ -18,7 +18,7 @@ body {
   resize: none;
 }
 
-#docInput:empty::after, #docInput:has(br)::before {
+#docInput:empty::after{
   content: 'Type here...';
   color: #cccccc;
 }

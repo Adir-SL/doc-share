@@ -1,14 +1,17 @@
 function updateMetaTags(content) {
+    const currentUrl = window.location.href;
+    const title = content || 'Doc Share';
+    
     // Update page title
-    document.title = content || 'Doc Share';
+    document.title = title;
     
     // Update Open Graph tags
-    document.querySelector('meta[property="og:title"]').setAttribute('content', content || 'Doc Share');
-    document.querySelector('meta[property="og:url"]').setAttribute('content', window.location.href);
+    document.getElementById('og-title').setAttribute('content', title);
+    document.getElementById('og-url').setAttribute('content', currentUrl);
     
     // Update Twitter tags
-    document.querySelector('meta[property="twitter:title"]').setAttribute('content', content || 'Doc Share');
-    document.querySelector('meta[property="twitter:url"]').setAttribute('content', window.location.href);
+    document.getElementById('twitter-title').setAttribute('content', title);
+    document.getElementById('twitter-url').setAttribute('content', currentUrl);
 }
 
 function saveFunc() {
@@ -25,3 +28,9 @@ function loadFunc() {
     document.getElementById("docInput").innerText = content;
     updateMetaTags(content);
 }
+
+// Update metadata when the URL changes
+window.addEventListener('hashchange', function() {
+    const content = decodeURIComponent(window.location.hash.slice(1, window.location.hash.length));
+    updateMetaTags(content);
+});

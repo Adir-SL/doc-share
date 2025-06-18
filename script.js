@@ -1,17 +1,9 @@
 function updateMetaTags(content) {
     const currentUrl = window.location.href;
     const title = content || 'Doc Share';
-    
+
     // Update page title
     document.title = title;
-    
-    // Update Open Graph tags
-    document.getElementById('og-title').setAttribute('content', title);
-    document.getElementById('og-url').setAttribute('content', currentUrl);
-    
-    // Update Twitter tags
-    document.getElementById('twitter-title').setAttribute('content', title);
-    document.getElementById('twitter-url').setAttribute('content', currentUrl);
 }
 
 function saveFunc() {
@@ -30,7 +22,7 @@ function loadFunc() {
 }
 
 // Update metadata when the URL changes
-window.addEventListener('hashchange', function() {
+window.addEventListener('hashchange', function () {
     const content = decodeURIComponent(window.location.hash.slice(1, window.location.hash.length));
     updateMetaTags(content);
 });

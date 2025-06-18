@@ -17,3 +17,8 @@ body {
   border-radius: 8px;
   resize: none;
 }
+
+#docInput:empty::after, #docInput:has(br)::before {
+  content: 'Type here...';
+  color: #cccccc;
+}

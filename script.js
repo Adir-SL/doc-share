@@ -1,4 +1,7 @@
 function saveFunc() {
+    if (document.getElementById("docInput").innerText == '\n') {
+        document.getElementById("docInput").innerText = '';
+    }
     window.location.hash = encodeURIComponent(document.getElementById("docInput").innerText);
 }
 

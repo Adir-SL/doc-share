@@ -1,14 +1,15 @@
 body {
   font-family: sans-serif;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  inset: 0;
 }
 
 #docInput {
-  position: absolute;
-  width: calc(100% - 16px);
-  height: calc(100% - 16px);
-  top: 0;
-  left: 0;
-  margin: 8px;
+  width: 400px;
+  height: 400px;
   padding: 12px;
   box-sizing: border-box;
   border: 1px solid #cccccc;

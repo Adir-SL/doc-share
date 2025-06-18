@@ -4,6 +4,9 @@ function updateMetaTags(content) {
 
     // Update page title
     document.title = title;
+    if (content == '\n') {
+        document.title = 'Doc Share';
+    }
 }
 
 function saveFunc() {

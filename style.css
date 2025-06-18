@@ -9,6 +9,7 @@ body {
 
 #docInput {
   width: 400px;
+  max-width: calc(100vw - 24px);
   height: 400px;
   padding: 12px;
   box-sizing: border-box;
